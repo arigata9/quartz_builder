@@ -6,7 +6,7 @@ FROM node:latest AS build
 WORKDIR /app
 
 COPY package.json /app
-RUN mkdir /quartz && git clone https://github.com/jackyzha0/quartz.git /quartz && cd /quartz && npm install
+RUN mkdir /quartz && git clone https://github.com/arigata9/quartz-dndwiki.git /quartz && cd /quartz && npm install
 RUN npm install
 
 #--- Use node to run app.js which will run the build job and expressJS server ---
