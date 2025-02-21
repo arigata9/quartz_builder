@@ -105,6 +105,6 @@ app.get('*', function(req, res){
 app.get('*.php', function(req, res){
   // Punish for trying to find php
   res.redirect(301, 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-}
+});
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
