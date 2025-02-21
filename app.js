@@ -102,4 +102,9 @@ app.get('*', function(req, res){
   res.status(404).sendFile(path.join(OUTPUT_DIR, "404.html"));
 });
 
+app.get('*.php', function(req, res){
+  // Punish for trying to find php
+  res.redirect(301, 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+}
+
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
