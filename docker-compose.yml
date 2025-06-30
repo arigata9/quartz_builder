@@ -6,7 +6,9 @@ networks:
  
 services:
   quartz_builder_markus:
-    image: quartz_builder_markus:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: quartz-builder-markus
     networks:
       proxynet:
