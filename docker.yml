@@ -1,0 +1,24 @@
+version: '3.8'
+ 
+networks:
+  proxynet:
+    external: true
+ 
+services:
+  quartz_builder_markus:
+    image: quartz_builder_markus:latest
+    container_name: quartz-builder-markus
+    networks:
+      proxynet:
+        ipv4_address: 10.200.20.32
+    volumes:
+      - "/mnt/hdd/nextcloud/markusneuloh/files/DND Josef/Wiki/:/vault:rw"
+      - "/mnt/ssd/appdata/quartz_builder_markus/output/:/output:rw"
+    environment:
+      VAULT_DIR: /vault
+      OUTPUT_DIR: /output
+      TIMER: "5"
+      FOLDER: /
+    ports:
+      - "9543:9543"
+    restart: unless-stopped
