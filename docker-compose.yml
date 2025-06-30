@@ -20,7 +20,5 @@ services:
       VAULT_DIR: /vault
       OUTPUT_DIR: /output
       TIMER: "5"
-      FOLDER: /
-    ports:
-      - "9543:9543"
+      FOLDER: /DND-LMoP
     restart: unless-stopped
